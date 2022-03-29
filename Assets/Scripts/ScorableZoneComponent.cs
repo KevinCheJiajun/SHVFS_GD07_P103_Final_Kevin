@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScorableZoneComponent : MonoBehaviour
 {
-    public List<int> ZoneTeamID = new List<int>();
-    public float TickPoints;
-    public float TickRate;
+    public List<int> zoneTeamID = new List<int>();
+    public float tickPoints;
+    public float tickRate;
     private float timer = 0;
     public int zoneID = 0;
     private void Start()
@@ -25,11 +25,11 @@ public class ScorableZoneComponent : MonoBehaviour
     {
         timer += Time.deltaTime;
         bool isSame = true;
-        if (timer < TickRate) return;
-        if (ZoneTeamID.Count != 0)
+        if (timer < tickRate) return;
+        if (zoneTeamID.Count != 0)
         {
-            var setTeamID = ZoneTeamID[0];
-            foreach (var triggerTeamID in ZoneTeamID)
+            var setTeamID = zoneTeamID[0];
+            foreach (var triggerTeamID in zoneTeamID)
             {
                 if (triggerTeamID != setTeamID)
                 {
@@ -42,7 +42,7 @@ public class ScorableZoneComponent : MonoBehaviour
                 {
                     if (teams[i].ID == setTeamID)
                     {
-                        teams[i].teamScore += TickPoints;
+                        teams[i].teamScore += tickPoints;
                         Debug.Log($"Team{i} now get {teams[i].teamScore} Scores!");
                     }
                 }
@@ -50,19 +50,20 @@ public class ScorableZoneComponent : MonoBehaviour
         timer = 0;
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ScorerComponent>())
         {
-            ZoneTeamID.Add(other.GetComponent<ScorerComponent>().TeamID);
+            zoneTeamID.Add(other.GetComponent<ScorerComponent>().teamID);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<ScorerComponent>())
         {
-            ZoneTeamID.Remove(other.GetComponent<ScorerComponent>().TeamID);
+            zoneTeamID.Remove(other.GetComponent<ScorerComponent>().teamID);
         }
     }
+
 }
