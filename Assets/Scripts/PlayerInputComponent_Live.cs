@@ -5,23 +5,27 @@ using UnityEngine;
 public class PlayerInputComponent_Live : MonoBehaviour
 {
     public float movementSpeed;
-    public float jumpHeight;
     public float lookSpeed;
     public Transform cameraContainer;
-
-    public float rayLength = 1.2f;
 
     private Rigidbody rigidbody;
     private Animator animator;
     private Sword sword;
 
+    public string horizontal;
+    public string vertical;
+    //public KeyCode ;
+    //public KeyCode up;
+    //public KeyCode down;
 
     private Vector3 processedMoveInput;
     private float processedTurnInput;
     private float processedLookInput;
 
     private float rotateSpeed = 60.0f;
-    private bool isJumping;
+    //public float rayLength = 1.2f;
+    //private bool isJumping;
+    //public float jumpHeight;
 
     private void Start()
     {
@@ -33,20 +37,19 @@ public class PlayerInputComponent_Live : MonoBehaviour
     private void Update()
     {
         //Cursor.lockState = CursorLockMode.Locked;
-        var rightInput = Input.GetAxis("Horizontal");
-        var forwardInput = Input.GetAxis("Vertical");
-
-
-        var isGrounded = IsGrounded();
-
+        var rightInput = Input.GetAxis(horizontal);
+        var forwardInput = Input.GetAxis(vertical);
         processedTurnInput = Input.GetAxis("Mouse X");
         processedLookInput = -Input.GetAxis("Mouse Y");
 
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isJumping = true;
-        }
+        #region Jump
+        //var isGrounded = IsGrounded();
+        //if (Input.GetButtonDown("Jump") && isGrounded)
+        //{
+        //    isJumping = true;
+        //}
+        //animator.SetBool("IsJumping", !isGrounded);
+        #endregion
 
         processedMoveInput = transform.forward * forwardInput + transform.right * rightInput;
         processedMoveInput = processedMoveInput.magnitude >= 1 ? processedMoveInput.normalized : processedMoveInput;
@@ -55,32 +58,32 @@ public class PlayerInputComponent_Live : MonoBehaviour
 
 
         animator.SetFloat("Speed", forwardInput);
-        animator.SetBool("IsJumping", !isGrounded);
     }
 
     private void FixedUpdate()
     {
         rigidbody.MoveRotation(Quaternion.Euler(transform.eulerAngles + (Vector3.up * processedTurnInput) * Time.fixedDeltaTime * rotateSpeed));
-
-        if (isJumping)
-        {
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
-            rigidbody.AddForce(jumpHeight * Vector3.up, ForceMode.Impulse);
-            isJumping = false;
-        }
         rigidbody.MovePosition(transform.position + processedMoveInput * movementSpeed * Time.fixedDeltaTime);
+        #region isJuming
+        //if (isJumping)
+        //{
+        //    rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+        //    rigidbody.AddForce(jumpHeight * Vector3.up, ForceMode.Impulse);
+        //    isJumping = false;
+        //}
+        #endregion
     }
 
-    private bool IsGrounded()
-    {
-        Debug.DrawRay(transform.position, Vector3.down * rayLength, Color.red);
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit raycastHit, rayLength))
-        {
-            if (raycastHit.collider.gameObject.tag == "Ground")
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    //private bool IsGrounded()
+    //{
+    //    Debug.DrawRay(transform.position, Vector3.down * rayLength, Color.red);
+    //    if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit raycastHit, rayLength))
+    //    {
+    //        if (raycastHit.collider.gameObject.tag == "Ground")
+    //        {
+    //            return true;
+    //        }
+    //    }
+    //    return false;
+    //}
 }
