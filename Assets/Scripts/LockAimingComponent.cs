@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LockAimingComponent : MonoBehaviour
 {
+    public KeyCode LockAiming;
     public GameObject TargetGameObject;
-    public bool IsLockAiming = false;
+    private bool IsLockAiming = false;
     private void Update()
     {
         if (IsLockAiming)
@@ -15,7 +16,7 @@ public class LockAimingComponent : MonoBehaviour
             transform.forward = direction.normalized;
         }
 
-        if (!Input.GetKeyDown(KeyCode.Q)) return;
+        if (!Input.GetKeyDown(LockAiming)) return;
 
         IsLockAiming = !IsLockAiming;
     }

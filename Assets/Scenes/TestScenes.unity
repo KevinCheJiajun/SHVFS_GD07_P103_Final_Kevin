@@ -318,8 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37dfa5d806d41543bccbfd4841e2717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LockAiming: 339
   TargetGameObject: {fileID: 1144457137}
-  IsLockAiming: 0
 --- !u!1 &1144457137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2906318518071941193, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
@@ -337,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37dfa5d806d41543bccbfd4841e2717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LockAiming: 113
   TargetGameObject: {fileID: 564945764}
-  IsLockAiming: 0
 --- !u!1 &1670303084
 GameObject:
   m_ObjectHideFlags: 0
