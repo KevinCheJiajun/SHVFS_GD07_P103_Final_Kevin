@@ -12,8 +12,10 @@ public class PlayerInputComponent_Live : MonoBehaviour
     private Animator animator;
     private Sword sword;
 
-    public string horizontal;
-    public string vertical;
+    public string Horizontal;
+    public string Vertical;
+    public string MouseX;
+    public string MouseY;
     //public KeyCode ;
     //public KeyCode up;
     //public KeyCode down;
@@ -22,7 +24,7 @@ public class PlayerInputComponent_Live : MonoBehaviour
     private float processedTurnInput;
     private float processedLookInput;
 
-    private float rotateSpeed = 60.0f;
+    public float rotateSpeed = 60.0f;
     //public float rayLength = 1.2f;
     //private bool isJumping;
     //public float jumpHeight;
@@ -37,10 +39,10 @@ public class PlayerInputComponent_Live : MonoBehaviour
     private void Update()
     {
         //Cursor.lockState = CursorLockMode.Locked;
-        var rightInput = Input.GetAxis(horizontal);
-        var forwardInput = Input.GetAxis(vertical);
-        processedTurnInput = Input.GetAxis("Mouse X");
-        processedLookInput = -Input.GetAxis("Mouse Y");
+        var rightInput = Input.GetAxis(Horizontal);
+        var forwardInput = Input.GetAxis(Vertical);
+        processedTurnInput = Input.GetAxis(MouseX);
+        //processedLookInput = -Input.GetAxis(MouseY);
 
         #region Jump
         //var isGrounded = IsGrounded();

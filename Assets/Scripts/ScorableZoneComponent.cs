@@ -49,7 +49,6 @@ public class ScorableZoneComponent : MonoBehaviour
         }
         timer = 0;
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ScorerComponent>())
