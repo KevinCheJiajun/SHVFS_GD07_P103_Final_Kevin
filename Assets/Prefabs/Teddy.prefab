@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 85133447}
   - component: {fileID: 85133446}
   - component: {fileID: 85133449}
+  - component: {fileID: 788000296}
   m_Layer: 0
   m_Name: SwordCube
   m_TagString: Untagged
@@ -107,6 +108,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3313a435c12f11341a30e0b022128cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &788000296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85133444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3c264cd42a7f146bda0db4f9556537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2906318517193330290

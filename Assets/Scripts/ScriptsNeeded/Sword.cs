@@ -15,7 +15,13 @@ public class Sword : MonoBehaviour
     private Quaternion targetRot = Quaternion.Euler(90, 0, 0);
     public float TurningAngle_x = 90f;
     public float TurningAngle_z = 90f;
-    private float timerControl_x;
+    private float timerControl;
+
+    Collider sword;
+    private void Awake()
+    {
+        sword = GetComponentInChildren<BoxCollider>();
+    }
 
     void Update()
     {
@@ -33,19 +39,20 @@ public class Sword : MonoBehaviour
 
         if (transform.localRotation.eulerAngles.x == 0)
         {
-            timerControl_x = 0;
+            timerControl = 0;
         }
 
         targetRot = Quaternion.Euler(90, 0, 0);
 
-        timerControl_x += Time.deltaTime;
+        timerControl += Time.deltaTime;
 
-        transform.localRotation = Quaternion.Lerp(previousRot, targetRot, timerControl_x);
+        transform.localRotation = Quaternion.Lerp(previousRot, targetRot, timerControl);
 
         if (transform.localRotation == targetRot)
         {
-            timerControl_x = 0;
+            timerControl = 0;
             canAttack = false;
+            sword.isTrigger = false;
         }
     }
     public void SwordAttackInputCheck()
@@ -53,7 +60,8 @@ public class Sword : MonoBehaviour
         if (Input.GetKeyDown(Attack))
         {
             canAttack = true;
-            timerControl_x = 0;
+            timerControl = 0;
+            sword.isTrigger = true;
         }
     }
     public void SwordTurn()

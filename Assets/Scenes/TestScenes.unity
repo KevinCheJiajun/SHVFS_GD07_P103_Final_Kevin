@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 85133446, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144457138, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: LockAiming
+      value: 339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144457138, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: TargetGameObject
+      value: 
+      objectReference: {fileID: 1144457137}
     - target: {fileID: 2906318517193330291, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -155,8 +167,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2906318517193330292, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: Up
+      value: 333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906318517193330292, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: Left
+      value: 332
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906318517193330292, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+      propertyPath: Right
+      value: 331
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906318517193330292, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
       propertyPath: Attack
-      value: 102
+      value: 330
       objectReference: {fileID: 0}
     - target: {fileID: 2906318518071941193, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
       propertyPath: m_Name
@@ -243,7 +267,7 @@ PrefabInstance:
       value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2906318517193330292, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+    - {fileID: 6337003623473675931, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
 --- !u!1 &474038200
 GameObject:
@@ -373,6 +397,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LockAiming: 339
   TargetGameObject: {fileID: 1144457137}
+--- !u!1 &788000290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 85133444, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+  m_PrefabInstance: {fileID: 2906318519214170104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &788000297
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788000290}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &788000298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788000290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b250f9d7c76e764449ac0eff0a6741bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1062124737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 85133444, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
+  m_PrefabInstance: {fileID: 131577676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1062124743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062124737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3c264cd42a7f146bda0db4f9556537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1144457137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2906318518071941193, guid: 6f14824bd1649564e8425e234bccdfb7, type: 3}
@@ -760,7 +834,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972430455}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
