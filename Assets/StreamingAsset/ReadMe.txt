@@ -1,6 +1,9 @@
-﻿1. 本地分屏，玩家1用键盘，玩家二用手柄
-2，每个人可以用剑砍向另一个玩家，有三种方向攻击，分别是从左边横扫，从右边横扫，从上面下劈
-	玩家会用方向键控制三种方向，按下攻击键能从当前位置执行横扫或下劈
-3. 如果在横扫或下劈的过程中碰到了另一个玩家的剑，挥剑的玩家的剑会被弹开，视为本轮攻击失败。
-	反之，如果在横扫或下劈的过程中碰到了另一个玩家的身体，则视为攻击成功，被攻击到的玩家会扣除相应的生命值
-4. 地上会生成血瓶，捡到玩家恢复血量。
+﻿1.  local split screen, player 1 with the keyboard, player 2 with the handle
+2,  each player can use the sword to slash at another player, there are three directions of attack, respectively, 
+	from the left side of the sweep, from the right side of the sweep, from above down slash
+	Players will use the arrow keys to control the three directions, 
+	press the attack button can be performed from the current position sweep or downward slash
+3.  If during the sweep or downward slash the player touches another player's sword, the attack will be considered a failure.
+	Conversely, if the sweep or downward slash touches another player's body, 
+	the attack will be considered successful and the player attacked will have his or her life value deducted.
+4.  Blood bottles will be generated on the ground, pick up the player to restore blood.

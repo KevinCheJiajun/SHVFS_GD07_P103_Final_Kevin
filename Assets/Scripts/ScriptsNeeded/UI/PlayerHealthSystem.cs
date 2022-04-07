@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UISystem : MonoBehaviour
+public class PlayerHealthSystem : MonoBehaviour
 {
     public int HealthCurrent;
     public int HealthMax;
@@ -30,5 +30,9 @@ public class UISystem : MonoBehaviour
     {
         Time.timeScale = 0;
         player.SetActive(true);
+    }
+    public void Heal(int Number)
+    {
+        HealthCurrent += Number;
     }
 }
