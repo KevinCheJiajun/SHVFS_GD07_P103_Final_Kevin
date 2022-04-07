@@ -10,11 +10,10 @@ public class Sword : MonoBehaviour
     public KeyCode Left;
     public KeyCode Right;
     public float AttackSpeed;
+    public float TurnAngle = 90f;
     private bool canAttack, canTurnLeft, canTurnUp, canTurnRight;
     private Vector3 targetRotation;
     private Quaternion targetRot = Quaternion.Euler(90, 0, 0);
-    public float TurningAngle_x = 90f;
-    public float TurningAngle_z = 90f;
     private float timerControl;
 
     Collider sword;
@@ -70,7 +69,7 @@ public class Sword : MonoBehaviour
 
         if (canTurnLeft)
         {
-            targetRotation = new Vector3(0, 0, 90);
+            targetRotation = new Vector3(0, 0, TurnAngle);
             canTurnLeft = false;
         }
         if (canTurnUp)
@@ -80,7 +79,7 @@ public class Sword : MonoBehaviour
         }
         if (canTurnRight)
         {
-            targetRotation = new Vector3(0, 0, -90);
+            targetRotation = new Vector3(0, 0, -TurnAngle);
             canTurnRight = false;
         }
 
